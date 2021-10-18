@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 # Coingecko
-Route::group(['prefix' => 'api/v3/coins'], function ($router) {
+Route::group(['prefix' => 'v3/coins'], function ($router) {
     Route::get('/list', [\App\Http\Controllers\TokenController::class, 'list']);
     Route::get('/{coin_id}', [\App\Http\Controllers\TokenController::class, 'info']);
 });
