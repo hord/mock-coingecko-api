@@ -1,0 +1,1 @@
+# mock-coingecko-api
