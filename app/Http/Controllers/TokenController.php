@@ -9,7 +9,7 @@ class TokenController extends Controller
 {
     public function list() {
 
-        $tokens = Token::all();
+        $tokens = Token::where('is_visible', true)->get();
 
         $data = [];
 

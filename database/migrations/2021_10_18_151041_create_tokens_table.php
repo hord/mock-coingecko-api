@@ -20,6 +20,7 @@ class CreateTokensTable extends Migration
             $table->string('name');
             $table->string('price');
             $table->string('contract_address');
+            $table->boolean('is_visible');
             $table->timestamps();
         });
     }
