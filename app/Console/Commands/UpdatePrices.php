@@ -39,12 +39,14 @@ class UpdatePrices extends Command
      */
     public function handle()
     {
-        $tokens = Token::all();
+        $tokens = Token::where('is_visible', true)->get();
 
         foreach ($tokens as $token) {
             try {
                 dispatch_sync(new CalculatePriceJob($token));
-            }catch (\Exception $e) {}
+            }catch (\Exception $e) {
+                dd($e);
+            }
         }
 
         return Command::SUCCESS;
